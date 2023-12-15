@@ -1,6 +1,7 @@
 function isValidowner_Email(owner_email) {
   // Regular expression for a basic owner_email validation
   const owner_emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
 
   // Test the owner_email against the regex
   return owner_emailRegex.test(owner_email);
