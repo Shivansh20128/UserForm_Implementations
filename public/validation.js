@@ -1,7 +1,7 @@
 function isValidowner_Email(owner_email) {
   // Regular expression for a basic owner_email validation
   const owner_emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  
+
 
   // Test the owner_email against the regex
   return owner_emailRegex.test(owner_email);
@@ -89,5 +89,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
         }
+        const formData = new FormData(form);
+
+    // Send data to the Google Apps Script
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.text())
+      .then((message) => {
+        alert(message); // Display success or error message
+
+        // Redirect to another HTML page
+        window.location.href = "form_creation.html";
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+        alert("An error occurred while submitting the form.");
+      });
     });
 });
