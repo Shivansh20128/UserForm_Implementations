@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="validation.js" defer></script>
+</head>
+<body>
+
+<h2>Add your form</h2>
+
+<form action="https://script.google.com/macros/s/AKfycbzTC_1pHxR0J2Vu27fmoH5JdiKnCNi_OGEcewDxDPUEBfxF1qCBbIQzB9WjO8SFR74/exec" method="post" id="userForm">
+    <label for="form_name">Give your form a name</label>
+    <input type="text" id="form_name" name="form_name" placeholder="Form name" required>
+    <div class="error-message" id="form_name-error"></div>
+
+    <label for="owner_email">Email address of form's owner:</label>
+    <input type="owner_email" id="owner_email" name="owner_email" placeholder="Email Address" required>
+    <div class="error-message" id="owner_email-error"></div>
+
+    <label for="no_of_questions">How many many questions will be there in the form? (should be less than 20)</label>
+    <input type="text" id="no_of_questions" name="no_of_questions" placeholder="Number of questions" required>
+    <div class="error-message" id="no_of_questions-error"></div>
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
