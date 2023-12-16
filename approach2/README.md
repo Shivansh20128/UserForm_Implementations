@@ -1,5 +1,5 @@
-# Atlan Task
-Backend Challenge for internship at Atlan
+# Approach 2
+
 
 
 This repository contains the code for making a form. For my case, I have added a form for a governments delivering vaccines to small business owners managing their daily inventory.
@@ -17,10 +17,7 @@ The fetures that are implemented in this task from the problem statement are:
 
 Follow the below steps to make the setup.
 
-Clone this repository (It is a private repo, so I will need to add you as collaborator first)
-```
-git clone https://github.com/Shivansh20128/Atlan_task.git
-```
+Enter the approach 2 folder.
 
 Install the necessary packages
 ```

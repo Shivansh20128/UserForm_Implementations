@@ -8,3 +8,8 @@ I am going to talk about both the appraches here. The first approach allows the 
 All the information is stored about the forms, the questions, and the responses in the csv files. Support for adding this data to google sheets can be added to this as a further development (has been covered in the other approach). 
 
 In the other approach, I have prepared a form for a government body providing vaccines to enterprises. In this approach, The form takes the responses and sends them directly to a google sheet without any delay.
+
+
+# Design
+
+There are many ways to design such a data store for forms. The most commonly known are the Google forms, from which we can learn a lot and try to replicate how it functions. 
