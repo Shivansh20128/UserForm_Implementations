@@ -1,0 +1,114 @@
+<!-- questions-form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            margin-left: 45%;
+            color: #333;
+        }
+
+        form {
+            max-width: 70%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #001658;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Questions Form</h2>
+    <form action="/submit-questions" method="post" id="questionsForm">
+        <!-- JavaScript will dynamically generate these fields based on the number of questions -->
+    </form>
+
+    <script>
+        // Fetch the number of questions from data.csv
+        fetch('/get-num-questions')
+            .then(response => response.json())
+            .then(data => {
+                const numQuestions = data.numQuestions;
+                generateFormFields(numQuestions);
+            })
+            .catch(error => console.error(error));
+
+        // Function to dynamically generate input fields based on the number of questions
+        function generateFormFields(numQuestions) {
+            const form = document.getElementById('questionsForm');
+
+            for (let i = 1; i <= numQuestions; i++) {
+                const label = document.createElement('label');
+                label.textContent = `Question ${i}:`;
+                form.appendChild(label);
+
+                const inputQuestion = document.createElement('input');
+                inputQuestion.type = 'text';
+                inputQuestion.name = `question${i}`;
+                inputQuestion.required = true;
+                inputQuestion.placeholder = "Enter your question";
+                form.appendChild(inputQuestion);
+
+                const inputTypeLabel = document.createElement('label');
+                inputTypeLabel.textContent = `Input Type ${i}:`;
+                form.appendChild(inputTypeLabel);
+
+                const inputType = document.createElement('input');
+                inputType.type = 'text';
+                inputType.name = `inputType${i}`;
+                inputType.placeholder = "Enter input type (text/number)";
+                inputType.required = true;
+                form.appendChild(inputType);
+
+                // Add line break for better spacing
+                form.appendChild(document.createElement('br'));
+                form.appendChild(document.createElement('br'));
+                form.appendChild(document.createElement('hr'));
+                form.appendChild(document.createElement('br'));
+                form.appendChild(document.createElement('br'));
+            }
+
+            // Add the submit button
+            const submitButton = document.createElement('input');
+            submitButton.type = 'submit';
+            submitButton.value = 'Submit';
+            form.appendChild(submitButton);
+        }
+    </script>
+</body>
+</html>
