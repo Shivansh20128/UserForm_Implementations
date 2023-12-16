@@ -34,3 +34,5 @@ A localhost server will start running on port 3000.
 Go to http://localhost:3000 and fill the form as you like.
 
 You can then check the response you filled on the provided Google sheet link.
+
+This is the link of the script that has been written in the google sheets Apps script to add data. https://script.google.com/u/0/home/projects/1dq7I7-MrWaU2HLl49MrzbRfKN1pl-igzYrpLi1exPCjLBrgG600lJjlF/edit
