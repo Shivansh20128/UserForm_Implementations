@@ -181,7 +181,7 @@ app.post('/submit', (req, res) => {
                 });
 
             // Redirect to the home page or another appropriate page
-            res.redirect('/');
+            res.redirect('/generated-form');
         });
 });
     
