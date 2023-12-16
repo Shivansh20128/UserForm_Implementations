@@ -26,7 +26,14 @@ Now, you will be taken to another page. This page will have a new form with the 
 After filling all the questions and their data types, you will be navigated to the form that will be send to the users in a real environment. In a real environment, the form will be published on a unique link, but since this is just a sample on a localhost, I have given it a static URL. 
 On this page, the form can be filled and submitted. Upon submission, the page will be just refreshed and not navigate to any other page so that you can try it multiple times without going through the whole process again.
 
+
+You can see the meta deta for the form in the data.csv file.
+
+You can see the questions in the form in the questions file.
+
+You can see the responses for the form in the responses.csv file.
+
 # Deliverables Required
 
-1. The assignment asks for validation checks, which have been performed for the data types, i.e., the data types should be from int, number and email. However, the program will not end if some other input type is provided. Other validation check is of the limit for the number of questions, it should more than 0 and less than 21. 
+1. The assignment asks for validation checks, which have been performed for the data types, i.e., the data types should be from int, number and email. However, the program will not end if some other input type is provided. Other validation check is of the limit for the number of questions, it should more than 0, otherwise it will take it as 0.
 1. The assignment asks for logging. This has been done while writing the code. try-catch statements have been written everywhere where there is some chance of getting an error. The errors have been printed through the console using console.log statements.

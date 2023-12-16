@@ -14,6 +14,7 @@ function isValidowner_Email(owner_email) {
     // Test the owner_email against the regex
     return owner_emailRegex.test(owner_email);
   }
+
 // Use body-parser middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -132,7 +133,6 @@ app.post('/submit', (req, res) => {
         .on('data', data =>{
             // console.log(data);
             questions.push(data);
-            console.log("hekki ghekk");
             console.log(questions);
         })
         .on('end', () => {
@@ -157,14 +157,11 @@ app.post('/submit', (req, res) => {
         .pipe(csv())
         .on('data', data => questions.push(data))
         .on('end', () => {
-            // Add your logic to handle the submitted form data here
-            // ...
 
-            // Write the responses to a CSV file with questions as column titles
             const csvWriter = createCsvWriter({
                 path: 'responses.csv',
                 header: questions.map(question => ({ id: question.question, title: question.question })),
-                // append:true,
+                append:true,
             });
 
             const data = {};
@@ -185,16 +182,6 @@ app.post('/submit', (req, res) => {
         });
 });
     
-    
-    // app.post('/submit-generated-form', (req, res) => {
-    // // Process the form data from the dynamically generated form
-    // console.log('Submitted Form Data:', req.body);
-    
-    // // Add your logic to handle the submitted form data here
-    
-    // // Redirect to the home page or another appropriate page
-    // res.redirect('/');
-    // });
     
     function generateFormHtml(questions) {
     let formHtml = '<!DOCTYPE html>';
